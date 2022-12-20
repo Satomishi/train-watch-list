@@ -1,0 +1,10 @@
+<h1>Welcome to your Movie's lists</h1>
+<%= simple_form_for(@list, as: :list, method: :post, url: lists_path) do |f| %>
+  <%= f.input :name %>
+  <%= f.submit 'New list' %>
+<% end %>
+<ul>
+<% @lists.each do |list| %>
+  <li><h3><%= link_to list.name, list_path(list) %></h3></li>
+<% end %>
+</ul>
